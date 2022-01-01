@@ -24,6 +24,10 @@ func _input(event):
 	if event.is_action_pressed("tower rightdown"):
 		target.x += -285
 		target.y += -22.5
+	if event.is_action_pressed("loadTest"):
+		var scene = load("res://disk.tscn")
+		var instance = scene.instance()
+		add_child(instance)
 	
 func _physics_process(delta):
 	velocity = position.direction_to(target) * speed
